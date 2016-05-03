@@ -1,5 +1,5 @@
 Ext.define('RedAlert.model.Base', {
-    extend: 'Ext.data.TreeModel',
+    extend: 'Ext.data.Model',
     schema: {
         namespace: 'RedAlert.model'
     }

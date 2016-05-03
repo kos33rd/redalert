@@ -1,8 +1,7 @@
 Ext.define('RedAlert.model.Project', {
     extend: 'RedAlert.model.Base',
     requires: [
-        'RedAlert.utils.RestProxy',
-        'RedAlert.model.Version'
+        'RedAlert.utils.RestProxy'
     ],
     fields: [
         {name: 'id', type: 'int'},

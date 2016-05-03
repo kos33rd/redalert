@@ -1,4 +1,4 @@
-Ext.define('RedAlert.Env', {
+Ext.define('RedAlert.Environment', {
     singleton: true,
     alternateClassName: 'Env',
 

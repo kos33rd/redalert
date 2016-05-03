@@ -3,7 +3,6 @@ Ext.define('RedAlert.view.main.Main', {
     xtype: 'app-main',
 
     requires: [
-        // 'Ext.plugin.Viewport',
         'RedAlert.view.main.MainController',
         'RedAlert.view.navigation.Navigation',
         'RedAlert.view.workspace.Workspace'
@@ -18,8 +17,8 @@ Ext.define('RedAlert.view.main.Main', {
     items: [{
         xtype: 'app-navigation',
         border: true,
-        region: 'west',
-        width: 250
+        region: 'north',
+        height: 40
     }, {
         xtype: 'app-workspace',
         border: true,

@@ -1,23 +1,23 @@
 Ext.define('RedAlert.view.workspace.Workspace', {
     extend: 'Ext.panel.Panel',
+    requires: [
+        'RedAlert.view.workspace.Board'
+    ],
     xtype: 'app-workspace',
     layout: {
         type: 'card'
     },
     items: [
         {
-            // xtype: 'ws-empty',
-            xtype: 'panel',
-            title: 'Initial panel',
-            html: 'Empty initial panel'
-        },{
-            // xtype: 'ws-project'
-            xtype: 'panel',
-            html: 'Project details'
-        },{
-            // xtype: 'ws-version',
-            xtype: 'panel',
-            html: 'Version details'
+            xtype: 'ws-board',
+            title: 'Agile scrum board'
         }
+        // ,{
+        //     xtype: 'ws-project'
+        //     html: 'Project details'
+        // },{
+        //     xtype: 'ws-version',
+            // html: 'Version details'
+        //}
     ]
 });

@@ -41,6 +41,11 @@ Ext.define('RedAlert.utils.RestProxy', {
             delete params[tplParam];
         });
 
+        //extracting parameters from store filters (useful with reference stores)
+        if(params.hasOwnProperty('filter')) {
+            Ext.merge(templateContext, this.getFilterVariables(Ext.JSON.decode(params['filter']), tplParams));
+        }
+
         //applying template to url
         var urlTpl = new Ext.XTemplate(url);
         url = urlTpl.apply(templateContext);
@@ -53,6 +58,22 @@ Ext.define('RedAlert.utils.RestProxy', {
         }
 
         return request;
+    },
+
+    /**
+     * Extracts parameters for URL from Ext.util.Filter "filters" array.
+     * @param filters[] Array of Ext.util.Filter representations
+     * @param tplParams[] Array of required inline parameters from URL template
+     * @returns {Object} Associative array of url template keys and their values
+     */
+    getFilterVariables: function (filters, tplParams) {
+        var filterTemplateParams = {};
+        Ext.Array.each(filters, function(filter){
+            if(filter.exactMatch && tplParams.indexOf(filter.property) != -1){
+                filterTemplateParams[filter.property] = filter.value;
+            }
+        });
+        return filterTemplateParams;
     },
 
     /**
