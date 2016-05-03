@@ -24,7 +24,7 @@ Ext.define('RedAlert.view.workspace.column.ColumnView', {
             for(; i < len; i++){
                 var node = nodes[i],
                     record = view.getRecord(node),
-                    widget;
+                    issueForm;
 
                 issueForm = Ext.create('RedAlert.view.workspace.issue.Issue', {
                     renderTo: node

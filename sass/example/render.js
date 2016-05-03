@@ -21,7 +21,7 @@ Ext.theme = Ext.apply(Ext.theme || {}, {
 
     /**
      * The collection of shortcuts for a given alias (e.g., 'widget.panel'). This is an
-     * object keyed by alias whose values are arrays of shortcut definitions.
+     * object keyed by alias whose values are arrays of shortname definitions.
      * @private
      */
     _shortcuts: {},
@@ -105,17 +105,17 @@ Ext.theme = Ext.apply(Ext.theme || {}, {
     },
 
     /**
-     * Adds one or more shortcuts to the rendering process. A `shortcut` is an object that
+     * Adds one or more shortcuts to the rendering process. A `shortname` is an object that
      * looks the same as a `manifest` entry. These are combined by copying the properties
-     * from the shortcut over those of the manifest entry. In basic terms:
+     * from the shortname over those of the manifest entry. In basic terms:
      *
-     *      var config = Ext.apply(Ext.apply({}, manfiest.config), shortcut.config);
-     *      var entry = Ext.apply(Ext.apply({}, manfiest), shortcut);
+     *      var config = Ext.apply(Ext.apply({}, manfiest.config), shortname.config);
+     *      var entry = Ext.apply(Ext.apply({}, manfiest), shortname);
      *      entry.config = config;
      *
      * This is not exactly the process, but the idea is the same. The difference is that
      * the `ui` of the manifest entry is used to replace any `"{ui}"` substrings found in
-     * any string properties of the shortcut or its `config` object.
+     * any string properties of the shortname or its `config` object.
      *
      * Usage:
      *
@@ -177,7 +177,7 @@ Ext.theme = Ext.apply(Ext.theme || {}, {
     },
 
     /**
-     * This method accepts an manifest entry and a shortcut entry and returns the merged
+     * This method accepts an manifest entry and a shortname entry and returns the merged
      * version.
      * @private
      */
@@ -245,7 +245,7 @@ Ext.theme = Ext.apply(Ext.theme || {}, {
     },
 
     /**
-     * Renders a component given its manifest and shortcut entries.
+     * Renders a component given its manifest and shortname entries.
      * @private
      */
     renderWidget: function (manifestEntry, shortcut) {

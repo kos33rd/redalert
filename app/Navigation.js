@@ -4,13 +4,13 @@ Ext.define('RedAlert.Navigation', {
     singleton: true,
     config: {
         project: null,
-        version: null
+        version: null,
+        active_statuses: null
     },
 
     applyProject: function (project) {
         return this.assertObjectType(project, RedAlert.model.Project);
     },
-
     updateProject: function (project) {
         this.fireEvent('projectset', project);
     },
@@ -18,9 +18,15 @@ Ext.define('RedAlert.Navigation', {
     applyVersion: function (version) {
         return this.assertObjectType(version, RedAlert.model.Version);
     },
-
     updateVersion: function (version) {
         this.fireEvent('versionset', version);
+    },
+
+    applyActive_statuses: function (statuses) {
+        return Ext.isArray(statuses);
+    },
+    updateActive_statuses: function(statuses){
+        this.fireEvent('activestatusesset', statuses);
     },
 
     assertObjectType: function(object, type) {

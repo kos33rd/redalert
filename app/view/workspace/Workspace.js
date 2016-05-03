@@ -4,6 +4,11 @@ Ext.define('RedAlert.view.workspace.Workspace', {
         'RedAlert.view.workspace.Board'
     ],
     xtype: 'app-workspace',
+
+    // no header and non-empty title is intentional - used for WAI-ARIA accessibility
+    title: 'Main workspace',
+    header: false,
+
     layout: {
         type: 'card'
     },

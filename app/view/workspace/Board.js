@@ -16,15 +16,15 @@ Ext.define('RedAlert.view.workspace.Board', {
             flex: 1,
             border: 5
         }, {
-            xtype: 'col-backlog',
+            xtype: 'col-sprint',
             title: 'New',
             flex: 1
         }, {
-            xtype: 'col-backlog',
+            xtype: 'col-sprint',
             title: 'In progress',
             flex: 1
         }, {
-            xtype: 'col-backlog',
+            xtype: 'col-sprint',
             title: 'Done',
             flex: 1
         }

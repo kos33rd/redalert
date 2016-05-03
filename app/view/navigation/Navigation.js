@@ -10,6 +10,10 @@ Ext.define('RedAlert.view.navigation.Navigation', {
         type: 'hbox',
         align: 'stretch'
     },
+    
+    // no header and non-empty title is intentional - used for WAI-ARIA accessibility
+    title: 'Navigation',
+    header: false,
 
     items: [
         {
@@ -22,13 +26,20 @@ Ext.define('RedAlert.view.navigation.Navigation', {
         },
         {
             xtype: 'box',
-            flex: 1
+            flex: 1,
+            reference: 'navigation_spacer'
+        },
+        {
+            xtype: 'box',
+            width: 1,
+            reference: 'statuses_selector'
         },
         {
             // xtype: 'nav-userinfo'
             xtype: 'panel',
             width: 150,
-            title: 'Userinfo'
+            title: 'Userinfo',
+            reference: 'user_info'
         }
     ]
 });
