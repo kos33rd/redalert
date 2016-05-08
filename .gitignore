@@ -2,3 +2,5 @@ ext
 build
 .idea
 env.json
+sass/example/bootstrap.json
+classic.json

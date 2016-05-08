@@ -4,12 +4,15 @@ Ext.define('RedAlert.view.workspace.column.Column', {
         'Ext.ux.DataView.Animated',
         'RedAlert.view.workspace.column.ColumnView'
     ],
-
-    scrollable: 'vertical',
-    layout: 'fit',
+    flex: 1,
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
     titleAlign: 'center',
     items: [{
-        xtype: 'col-view'
+        xtype: 'col-view',
+        flex: 1
     }],
 
     initComponent: function () {

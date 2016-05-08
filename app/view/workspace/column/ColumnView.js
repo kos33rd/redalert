@@ -5,8 +5,8 @@ Ext.define('RedAlert.view.workspace.column.ColumnView', {
     ],
     xtype: 'col-view',
     store: 'ext-empty-store',
+    scrollable: 'vertical',
     itemSelector: 'div.component',
-    margin: 10,
     tpl: [
         '<tpl for=".">',
             '<div class="component"></div>',
@@ -15,22 +15,33 @@ Ext.define('RedAlert.view.workspace.column.ColumnView', {
     plugins: {
         xclass: 'Ext.ux.DataView.Animated'
     },
+    issues: [],
     listeners: {
         refresh: function(view, opts){
+            console.log('View Refresh!');
             Ext.suspendLayouts();
             var nodes = view.getNodes(),
                 len = nodes.length,
                 i = 0;
+            this.issues = [];
             for(; i < len; i++){
                 var node = nodes[i],
                     record = view.getRecord(node),
                     issueForm;
 
                 issueForm = Ext.create('RedAlert.view.workspace.issue.Issue', {
-                    renderTo: node
+                    renderTo: node,
+                    issue: record
                 });
-                issueForm.setIssue(record);
+                this.issues.push(issueForm);
             }
+            Ext.resumeLayouts(true);
+        },
+        resize: function(){
+            Ext.suspendLayouts();
+            Ext.Array.each(this.issues, function(issueCard){
+                issueCard.updateLayout();
+            });
             Ext.resumeLayouts(true);
         }
     }

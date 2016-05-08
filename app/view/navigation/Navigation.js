@@ -10,7 +10,7 @@ Ext.define('RedAlert.view.navigation.Navigation', {
         type: 'hbox',
         align: 'stretch'
     },
-    
+
     // no header and non-empty title is intentional - used for WAI-ARIA accessibility
     title: 'Navigation',
     header: false,

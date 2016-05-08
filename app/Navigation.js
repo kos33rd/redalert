@@ -4,8 +4,20 @@ Ext.define('RedAlert.Navigation', {
     singleton: true,
     config: {
         project: null,
-        version: null,
-        active_statuses: null
+        version: null
+    },
+    active_statuses: null,
+
+    constructor: function(){
+        var me = this;
+        this.callParent(arguments);
+        this.active_statuses = new Ext.util.MixedCollection();
+        this.active_statuses.on('add', function(idx, status){
+            me.fireEvent('activestatusadded', status);
+        });
+        this.active_statuses.on('remove', function(status){
+            me.fireEvent('activestatusremoved', status);
+        });
     },
 
     applyProject: function (project) {
@@ -20,13 +32,6 @@ Ext.define('RedAlert.Navigation', {
     },
     updateVersion: function (version) {
         this.fireEvent('versionset', version);
-    },
-
-    applyActive_statuses: function (statuses) {
-        return Ext.isArray(statuses);
-    },
-    updateActive_statuses: function(statuses){
-        this.fireEvent('activestatusesset', statuses);
     },
 
     assertObjectType: function(object, type) {

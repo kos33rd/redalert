@@ -2,7 +2,6 @@ Ext.define('RedAlert.store.Issues', {
     extend: 'Ext.data.Store',
     model: 'RedAlert.model.Issue',
     storeId: 'issues',
-    autoLoad: true,
     remoteFilter: true,
 
     constructor: function () {

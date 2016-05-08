@@ -9,6 +9,7 @@ Ext.define('RedAlert.Application', {
 
     stores: [
         'RedAlert.store.Issues',
+        'RedAlert.store.BacklogIssues',
         'RedAlert.store.Projects',
         'RedAlert.store.Statuses'
     ],

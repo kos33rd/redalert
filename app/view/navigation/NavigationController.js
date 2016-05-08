@@ -1,6 +1,7 @@
 Ext.define('RedAlert.view.navigation.NavigationController', {
     extend: 'Ext.app.ViewController',
     requires: [
+        'RedAlert.Navigation',
         'RedAlert.store.Statuses',
         'RedAlert.view.navigation.StatusButton'
     ],
@@ -40,7 +41,7 @@ Ext.define('RedAlert.view.navigation.NavigationController', {
                     text: me.shortname(status.get('name')),
                     stateId: 'statusbtn-' + status.get('id'),
                     tooltip: status.get('name'),
-                    status: status.get('id'),
+                    status: status,
                     listeners: {
                         toggle: function(btn){
                             me.statusselectionchanged(btn, btn.pressed);
@@ -63,7 +64,11 @@ Ext.define('RedAlert.view.navigation.NavigationController', {
         }).join('');
     },
 
-    statusselectionchanged: function (button, status) {
-        console.log(arguments);
+    statusselectionchanged: function (button, status_is_active) {
+        if(status_is_active){
+            Nav.active_statuses.add(button.status);
+        } else {
+            Nav.active_statuses.remove(button.status);
+        }
     }
 });

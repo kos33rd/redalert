@@ -1,0 +1,50 @@
+// NB: Maybe there is a handy way to extend sencha mixins to reduce code duplication?
+
+$issue-default-color: blue;
+$issue-low-color: gray;
+$issue-normal-color: green;
+$issue-high-color: #ffce00;
+$issue-urgent-color: #ff4b00;
+$issue-immediate-color: red;
+
+
+@include extjs-panel-ui(
+        $ui: 'issue-default',
+        $ui-border-radius: 4px
+);
+
+@include extjs-panel-ui(
+        $ui: 'issue-low',
+        $ui-border-radius: 4px,
+        $ui-header-background-color: $issue-low-color,
+        $ui-border-color: $issue-low-color
+);
+
+@include extjs-panel-ui(
+        $ui: 'issue-normal',
+        $ui-border-radius: 4px,
+        $ui-header-background-color: $issue-normal-color,
+        $ui-border-color: $issue-normal-color,
+        $ui-header-padding: 5px
+);
+
+@include extjs-panel-ui(
+        $ui: 'issue-high',
+        $ui-border-radius: 4px,
+        $ui-header-background-color: $issue-high-color,
+        $ui-border-color: $issue-high-color
+);
+
+@include extjs-panel-ui(
+        $ui: 'issue-urgent',
+        $ui-border-radius: 4px,
+        $ui-header-background-color: $issue-urgent-color,
+        $ui-border-color: $issue-urgent-color
+);
+
+@include extjs-panel-ui(
+        $ui: 'issue-immediate',
+        $ui-border-radius: 4px,
+        $ui-header-background-color: $issue-immediate-color,
+        $ui-border-color: $issue-immediate-color
+);

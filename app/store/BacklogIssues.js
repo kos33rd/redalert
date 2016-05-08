@@ -1,8 +1,7 @@
-Ext.define('RedAlert.store.Issues', {
+Ext.define('RedAlert.store.BacklogIssues', {
     extend: 'Ext.data.Store',
     model: 'RedAlert.model.Issue',
-    storeId: 'issues',
-    autoLoad: true,
+    storeId: 'backlog_issues',
     remoteFilter: true,
 
     constructor: function () {
@@ -11,7 +10,7 @@ Ext.define('RedAlert.store.Issues', {
         Nav.on('projectset', function (project) {
             me.getProxy().setExtraParams(
                 {
-                    project_id: version.get('project')
+                    project_id: project.get('id')
                 }
             );
             me.load();
