@@ -6,6 +6,7 @@ Ext.define('RedAlert.view.workspace.column.ColumnView', {
     xtype: 'col-view',
     store: 'ext-empty-store',
     scrollable: 'vertical',
+    focusable: false,
     itemSelector: 'div.component',
     tpl: [
         '<tpl for=".">',
@@ -18,7 +19,6 @@ Ext.define('RedAlert.view.workspace.column.ColumnView', {
     issues: [],
     listeners: {
         refresh: function(view, opts){
-            console.log('View Refresh!');
             Ext.suspendLayouts();
             var nodes = view.getNodes(),
                 len = nodes.length,
@@ -28,7 +28,6 @@ Ext.define('RedAlert.view.workspace.column.ColumnView', {
                 var node = nodes[i],
                     record = view.getRecord(node),
                     issueForm;
-
                 issueForm = Ext.create('RedAlert.view.workspace.issue.Issue', {
                     renderTo: node,
                     issue: record

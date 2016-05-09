@@ -21,7 +21,7 @@ Ext.define('RedAlert.model.Issue', {
         {name: 'created_on', type: 'date'},
         {name: 'description', type: 'string'},
         {name: 'done_ratio', type: 'int'},
-        {name: 'estimated_hours', type: 'float'},
+        {name: 'estimated_hours', type: 'float', allowNull: true},
         {name: 'fixed_version', reference: 'Version'},
         {name: 'fixed_version_name', calculate: function(data){return data.fixed_version?data.fixed_version.name:null;}},
         {name: 'priority', reference: 'Priority'},

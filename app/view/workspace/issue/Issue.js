@@ -1,9 +1,13 @@
 Ext.define('RedAlert.view.workspace.issue.Issue', {
     extend: 'Ext.form.Panel',
+    requires: [
+        'RedAlert.view.workspace.issue.EstimatedHours'
+    ],
     xtype: 'issue',
     title: 'Issue',
     height: 190,
     margin: 5,
+    bodyPadding: 5,
     border: true,
     titleAlign: 'center',
     ui: 'issue-urgent',
@@ -14,38 +18,35 @@ Ext.define('RedAlert.view.workspace.issue.Issue', {
         type: 'vbox',
         align: 'stretch'
     },
+    defaults: {
+        margin: 0
+    },
     defaultType: 'displayfield',
     items: [
         {
             xtype: 'fieldcontainer',
-            height: 30,
+            height: 35,
             layout: {
                 type: 'hbox',
                 align: 'stretch'
             },
             items: [
                 {
-                    xtype: 'textfield',
+                    xtype: 'displayfield',
                     name: 'status_name',
                     fieldLabel: 'Status',
                     hideLabel: true,
-                    allowBlank: false,
                     flex: 1
                 }, {
-                    xtype: 'textfield',
+                    xtype: 'estimatedhoursfield',
                     name: 'estimated_hours',
-                    hideLabel: true,
-                    fieldLabel: 'Estimated hours',
-                    flex: 1
-                }, {
-                    xtype: 'label',
-                    text: 'Hr',
-                    width: 15
+                    width: 70
                 }
             ]
         }, {
             name: 'subject',
-            height: 10
+            margin: 0,
+            height: 25
         }, {
             name: 'description',
             height: 45

@@ -1,0 +1,18 @@
+
+@include extjs-text-field-ui(
+  $ui: 'hours',
+  $ui-font-size: 22px,
+  $ui-border-style: none,
+  $ui-font-weight: bold,
+  $ui-padding: 5 3 4 3
+);
+
+.x-form-text-hours{
+  text-align: right;
+  border:0;
+  border-bottom: 1px dotted gray;
+}
+
+.x-form-text-hours:focus{
+  background-color: #ffffc8;
+}
