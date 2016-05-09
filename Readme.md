@@ -22,7 +22,13 @@ Configure
 ---
 To set your configuration up you have to:
 1. Copy `env.json.example` to `env.json` in project root folder.
-2. Open `env.json` and fill up `backend_url` and `api_key` values with your redmine instance configuration.
+2. Open `env.json` and fill up `backend_url` and `api_key` values with your redmine instance configuration. You can generate private api_key for you user in Redmine web interface (My account - API access key)
+
+
+Redmine server requirements
+---
+- You have to install and configure CORS Redmine plugin (https://www.redmine.org/plugins/redmine_cors)
+- You have to enable REST API in Administration - Settings - API tab in Redmine web interface.
 
 
 Run
