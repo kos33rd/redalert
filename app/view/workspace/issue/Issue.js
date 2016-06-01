@@ -11,6 +11,7 @@ Ext.define('RedAlert.view.workspace.issue.Issue', {
     border: true,
     titleAlign: 'center',
     ui: 'issue-urgent',
+    draggable: true,
     config: {
         issue: null
     },

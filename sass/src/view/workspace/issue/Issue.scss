@@ -17,7 +17,8 @@ $issue-immediate-color: red;
         $ui: 'issue-low',
         $ui-border-radius: 4px,
         $ui-header-background-color: $issue-low-color,
-        $ui-border-color: $issue-low-color
+        $ui-border-color: $issue-low-color,
+        $ui-header-padding: 5px
 );
 
 @include extjs-panel-ui(
@@ -32,19 +33,22 @@ $issue-immediate-color: red;
         $ui: 'issue-high',
         $ui-border-radius: 4px,
         $ui-header-background-color: $issue-high-color,
-        $ui-border-color: $issue-high-color
+        $ui-border-color: $issue-high-color,
+        $ui-header-padding: 5px
 );
 
 @include extjs-panel-ui(
         $ui: 'issue-urgent',
         $ui-border-radius: 4px,
         $ui-header-background-color: $issue-urgent-color,
-        $ui-border-color: $issue-urgent-color
+        $ui-border-color: $issue-urgent-color,
+        $ui-header-padding: 5px
 );
 
 @include extjs-panel-ui(
         $ui: 'issue-immediate',
         $ui-border-radius: 4px,
         $ui-header-background-color: $issue-immediate-color,
-        $ui-border-color: $issue-immediate-color
+        $ui-border-color: $issue-immediate-color,
+        $ui-header-padding: 5px
 );
