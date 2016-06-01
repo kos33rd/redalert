@@ -19,10 +19,13 @@ Ext.define('RedAlert.view.navigation.NavigationController', {
     init: function () {
         var me = this;
         Nav.on('projectset', function (project) {
-            var versionsStore = project.versions();
-            versionsStore.load();
-            me.lookupReference('versionscombo').setStore(versionsStore);
-            me.lookupReference('versionscombo').setVisible(true);
+            var versionsStore = project.versions(),
+                versionsCombo = me.lookupReference('versionscombo');
+            versionsCombo.setStore(versionsStore);
+            versionsCombo.setVisible(true);
+            versionsStore.load(function(){
+                versionsCombo.select(this.first());
+            });
         });
         Ext.getStore('issue_statuses').on('datachanged', me.buildStatusesSelector, this);
     },
