@@ -25,6 +25,7 @@ Ext.define('RedAlert.view.navigation.NavigationController', {
             versionsCombo.setVisible(true);
             versionsStore.load(function(){
                 versionsCombo.select(this.first());
+                Nav.setVersion(this.first());
             });
         });
         Ext.getStore('issue_statuses').on('datachanged', me.buildStatusesSelector, this);
